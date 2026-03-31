@@ -1,0 +1,119 @@
+/**
+ * Flean Score — design tokens
+ * Source: Figma "Flean Application" (file key Ip8sZkzULH8kTSN7MCViD3),
+ * frame "Flean Score" (5088:2254). Colors & type sampled from the file;
+ * "Variable collection" locals merged below.
+ *
+ * To refresh codegen context: open the file in Figma desktop, select the
+ * Flean Score frame, then run get_design_context from the Figma MCP.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,700&family=Figtree:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap");
+
+:root {
+  /* ----- Figma variables ("Variable collection") — exact names as CSS-safe ----- */
+  --figma-colour-1: #739160;
+  --figma-colour-2: #ffffff;
+  --figma-text-1: #979899;
+  --figma-sub-background: rgb(
+    143 175 154 / 0.18
+  ); /* Sub-background: #8faf9a @ 18% */
+  --figma-line: #d7d7d7;
+  --figma-text-2: #8d8d8d;
+  --figma-sub-background-2: rgb(
+    212 168 87 / 0.5
+  ); /* #d4a857 @ 50% — use where semi-transparent gold tint is needed */
+  --figma-text-body: #4e6e3a;
+  --figma-nos: #e57964; /* penalty / "no" accent */
+  --figma-main-background: #f4f1ec;
+  --figma-text-headings: #2a2521;
+  --figma-text-sub-headings: #2b2b2b;
+  --figma-text-sub-headings-2: #d4a857;
+  --figma-buttons: #1f3d2b;
+  --figma-background: #8faf9a; /* solid brand green from variables */
+
+  /* ----- Names used by Figma MCP codegen (matches var() in design context export) ----- */
+  --colour-1: var(--figma-colour-1);
+  --colour-2: var(--figma-colour-2);
+  --sub-background: var(--figma-sub-background);
+  --text-2: var(--figma-text-2);
+
+  /* ----- Semantic aliases — Flean Score page ----- */
+  --color-page-bg: var(--figma-main-background);
+  --color-surface: var(--figma-colour-2);
+  --color-card: #f8f6f4;
+  --color-card-border: #e5e3dc;
+  --color-background-muted: #ffffff; /* nested metric blocks */
+
+  --color-text-primary: var(--figma-text-body);
+  --color-text-heading: var(--figma-buttons);
+  --color-text-heading-alt: var(--figma-text-headings);
+  --color-text-muted: var(--figma-text-2);
+  --color-text-subtle: var(--figma-text-1);
+
+  --color-accent-green: var(--figma-text-body);
+  --color-accent-olive: var(--figma-colour-1);
+  --color-accent-gold: var(--figma-text-sub-headings-2);
+  --color-penalty: var(--figma-nos);
+  --color-penalty-surface: #f6e9e4;
+  --color-penalty-text: #2a2521;
+
+  --color-bonus-muted-bg: var(--figma-sub-background);
+  --color-penalty-muted-bg: var(--figma-sub-background-2);
+  --color-secondary-section-bg: #eeeadd; /* Max score tile */
+
+  --color-icon-tint: rgb(226 97 54 / 0.15);
+  --color-card-stroke-penalty: rgb(226 97 54 / 0.2);
+  --color-divider: #d6d6d6;
+  --color-line: var(--figma-line);
+
+  --color-score-ring: #4e6e3a;
+  --color-score-ring-stroke: #2b2b2b;
+
+  /* Typography — families from Figma text layers */
+  --font-heading: "Manrope", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-label: "Figtree", system-ui, sans-serif;
+
+  /* Type scale (px) */
+  --text-nav: 0.875rem; /* 14 */
+  --text-body-lg: 1.125rem; /* 18 hero description */
+  --text-body: 0.875rem; /* 14 */
+  --text-caption: 0.875rem;
+  --text-metric-title: 1rem; /* 16 */
+  --text-section-lg: 1.875rem; /* 30 */
+  --text-section: 1.5rem; /* 24 */
+  --text-hero: 2.25rem; /* 36 */
+  --text-stat: 3rem; /* 48 Fraunces */
+
+  --leading-tight: 1.11; /* 40/36 */
+  --leading-hero: 1.25; /* 45/36 */
+  --leading-snug: 1.2; /* 24/20 */
+  --leading-body: 1.625; /* ~29.25/18 */
+  --leading-normal: 1.43; /* 20/14 */
+
+  --letter-spacing-tight-label: 0.04em; /* Score level ~0.6px @ 14px */
+
+  /* Layout */
+  --page-max-width: 390px;
+  --page-gutter: 2.5rem; /* horizontal inset for .page (desktop / wide) */
+  --page-gutter-effective: var(--page-gutter); /* narrow screens override below */
+  --radius-xl: 0.75rem; /* 12px — matches Tailwind rounded-xl */
+  --radius-pill: 624.9375rem;
+
+  /* Shared card column + padding (stat, metric, false-claims, deep dive) */
+  --card-rail-max: 56rem;
+  --card-padding: 2rem; /* default; mobile override below */
+
+  /* Shadows — not defined as variables in file; optional polish */
+  --shadow-none: none;
+}
+
+/* Phones: stronger insets + card padding (avoids clamp pinning to 1rem) */
+@media (max-width: 639.98px) {
+  :root {
+    --card-padding: 2.25rem;
+    --page-gutter-effective: max(1.5rem, min(2.25rem, 6vw + 1.25rem));
+  }
+}
