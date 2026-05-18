@@ -622,26 +622,32 @@ html {
 }
 
 .about-member-card {
-  min-height: 234px;
+  min-height: 0;
   border: 0.858px solid #d6d6d6;
   border-radius: 18px;
   background: #fff;
-  padding: 18px 20px 20px;
+  padding: 18px 20px 22px;
   text-align: center;
 }
 
-.about-member-emoji {
-  width: 52px;
-  height: 52px;
+.about-member-photo-wrap {
+  width: 96px;
+  height: 96px;
   margin: 0 auto;
   border-radius: 999px;
-  display: grid;
-  place-items: center;
-  font-size: 30px;
-  background: rgba(212, 168, 87, 0.3);
+  overflow: hidden;
+  background: rgba(212, 168, 87, 0.2);
+  border: 2px solid rgba(143, 175, 154, 0.35);
 }
 
-.about-member-card h3 {
+.about-member-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
   margin: 12px 0 0;
   color: #1f3d2b;
   font: 500 24px/28px "Figtree", sans-serif;
@@ -656,30 +662,37 @@ html {
 .about-member-card p {
   margin: 12px 0 0;
   color: #6d6c6c;
-  font: 400 14px/20px "Manrope", sans-serif;
+  font: 400 14px/22px "Manrope", sans-serif;
+  text-align: left;
 }
 
 .about-team-mobile-card {
   background: #fff;
   border: 0.858px solid #d6d6d6;
   border-radius: 16px;
-  min-height: 177px;
-  padding: 13px 12px;
+  min-height: 0;
+  padding: 14px 14px 16px;
   text-align: center;
 }
 
-.about-team-mobile-emoji {
-  width: 40px;
-  height: 40px;
+.about-team-mobile-photo-wrap {
+  width: 72px;
+  height: 72px;
   margin: 0 auto;
   border-radius: 999px;
-  display: grid;
-  place-items: center;
-  background: rgba(212, 168, 87, 0.3);
-  font-size: 22px;
+  overflow: hidden;
+  background: rgba(212, 168, 87, 0.2);
+  border: 2px solid rgba(143, 175, 154, 0.35);
 }
 
-.about-team-mobile-card h3 {
+.about-team-mobile-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
   margin: 10px 0 0;
   color: #1f3d2b;
   font: 500 16px/28px "Figtree", sans-serif;
@@ -692,9 +705,10 @@ html {
 }
 
 .about-team-mobile-card p {
-  margin: 6px 0 0;
+  margin: 8px 0 0;
   color: #6d6c6c;
-  font: 400 12px/18px "Manrope", sans-serif;
+  font: 400 12px/19px "Manrope", sans-serif;
+  text-align: left;
 }
 
 .contact-desktop {
