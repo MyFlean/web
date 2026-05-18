@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <!-- Mobile: script sends to Play / App Store. Desktop stays with store links below. -->
+    <title>Get Flean</title>
+    <script>
+      (function () {
+        var PLAY =
+          "https://play.google.com/store/apps/details?id=ai.flean.shop&hl=en_IN";
+        var IOS =
+          "https://apps.apple.com/in/app/flean-clean-food-nutrition/id6762185485";
+        var ua = navigator.userAgent || navigator.vendor || "";
+        var isAndroid = /Android/i.test(ua);
+        var isIOS =
+          /iPad|iPhone|iPod/i.test(ua) ||
+          (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+        if (isAndroid) window.location.replace(PLAY);
+        else if (isIOS) window.location.replace(IOS);
+        else window.ONELINK_DESKTOP = true;
+      })();
+    </script>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        display: grid;
+        place-items: center;
+        background: #fafafa;
+        color: #333;
+      }
+      .onelink-box {
+        margin: 0 1rem;
+        max-width: 22rem;
+        text-align: center;
+      }
+      .onelink-title {
+        font-weight: 600;
+        margin: 0 0 1rem;
+        font-size: 1.125rem;
+      }
+      .onelink-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1rem;
+        justify-content: center;
+        align-items: center;
+      }
+      .onelink-links a {
+        color: #1f3d2b;
+        font-weight: 500;
+      }
+      [hidden] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="onelink-desktop" class="onelink-box" hidden>
+      <p class="onelink-title">Get the Flean app</p>
+      <p class="onelink-links">
+        <a
+          href="https://apps.apple.com/in/app/flean-clean-food-nutrition/id6762185485"
+          rel="noopener noreferrer"
+          >App Store</a
+        >
+        <span aria-hidden="true">·</span>
+        <a
+          href="https://play.google.com/store/apps/details?id=ai.flean.shop&amp;hl=en_IN"
+          rel="noopener noreferrer"
+          >Google Play</a
+        >
+      </p>
+      <p style="margin-top: 1.25rem">
+        <a href="https://flean.ai/" style="font-weight: 400; opacity: 0.85"
+          >Continue to website</a
+        >
+      </p>
+    </main>
+    <p id="onelink-mobile-wait" class="onelink-box" hidden>Taking you to the store…</p>
+    <script>
+      (function () {
+        if (!window.ONELINK_DESKTOP) {
+          document.getElementById("onelink-mobile-wait").hidden = false;
+          return;
+        }
+        document.getElementById("onelink-desktop").hidden = false;
+      })();
+    </script>
+    <noscript>
+      <main class="onelink-box">
+        <p class="onelink-title">Get the Flean app</p>
+        <p class="onelink-links">
+          <a
+            href="https://apps.apple.com/in/app/flean-clean-food-nutrition/id6762185485"
+            rel="noopener noreferrer"
+            >App Store</a
+          >
+          <span aria-hidden="true">·</span>
+          <a
+            href="https://play.google.com/store/apps/details?id=ai.flean.shop&amp;hl=en_IN"
+            rel="noopener noreferrer"
+            >Google Play</a
+          >
+        </p>
+        <p style="margin-top: 1.25rem">
+          <a href="https://flean.ai/">Continue to website</a>
+        </p>
+      </main>
+    </noscript>
+  </body>
+</html>
