@@ -78,6 +78,7 @@ img {
   line-height: 1.25rem;
   color: var(--colour-1);
   text-decoration: none;
+  text-align: right;
 }
 
 .site-header__link:hover {
@@ -197,6 +198,7 @@ img {
   font-size: clamp(1rem, 1.35vw + 0.85rem, 1.25rem);
   line-height: 1.65;
   color: var(--colour-1);
+  text-wrap: pretty;
 }
 
 /* Score dial */
@@ -271,6 +273,150 @@ img {
   height: 1px;
 }
 
+/* ----- Product insights (section 2/3/4) ----- */
+.insight-section {
+  width: 100%;
+  max-width: var(--card-rail-max);
+  margin: 0 auto 1.5rem;
+  padding: var(--card-padding);
+  border-radius: clamp(1rem, 2vw, 1.5rem);
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+
+.insight-section--positive {
+  background: var(--sub-background);
+  border-color: rgb(143 175 154 / 0.35);
+}
+
+.insight-section--neutral {
+  background: var(--color-card);
+  border-color: var(--color-card-border);
+}
+
+.insight-section--negative {
+  background: var(--color-penalty-surface);
+  border-color: var(--color-card-stroke-penalty);
+}
+
+.insight-section__head {
+  margin-bottom: 1rem;
+}
+
+.insight-section__sentiment {
+  margin: 0 0 0.5rem;
+  display: inline-block;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.insight-section--positive .insight-section__sentiment {
+  color: var(--color-accent-green);
+  background: rgb(143 175 154 / 0.2);
+}
+
+.insight-section--neutral .insight-section__sentiment {
+  color: #677e73;
+  background: #ecebe4;
+}
+
+.insight-section--negative .insight-section__sentiment {
+  color: var(--color-penalty);
+  background: rgb(226 97 54 / 0.15);
+}
+
+.insight-section__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 1.5vw + 1rem, 1.75rem);
+  line-height: 1.25;
+  color: var(--color-text-heading);
+  text-wrap: balance;
+}
+
+.insight-section--negative .insight-section__title {
+  color: var(--color-penalty);
+}
+
+.insight-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.insight-card {
+  background: var(--colour-2);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-xl);
+  padding: 1rem;
+}
+
+.insight-section--positive .insight-card {
+  border-color: rgb(143 175 154 / 0.35);
+}
+
+.insight-section--negative .insight-card {
+  border-color: var(--color-card-stroke-penalty);
+}
+
+.insight-card__title {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  line-height: 1.35;
+  color: var(--color-text-heading);
+}
+
+.insight-section--negative .insight-card__title {
+  color: var(--color-penalty);
+}
+
+.insight-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.insight-list__item {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.insight-list__label {
+  font-family: var(--font-label);
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  color: var(--text-2);
+}
+
+.insight-list__value {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: var(--color-text-heading);
+}
+
+.insight-section--negative .insight-list__value ul {
+  margin: 0.35rem 0 0;
+  padding-left: 1rem;
+}
+
+.insight-section--negative .insight-list__value li {
+  margin: 0 0 0.15rem;
+}
+
 /* ----- How it works ----- */
 .how {
   padding-top: 2rem;
@@ -291,6 +437,7 @@ img {
   font-size: clamp(1.625rem, 2.5vw + 1rem, 2.25rem);
   line-height: 1.2;
   color: var(--color-text-heading);
+  text-wrap: balance;
 }
 
 .how__text {
@@ -649,6 +796,7 @@ img {
   font-size: var(--text-section);
   line-height: 2rem;
   color: var(--color-penalty);
+  text-wrap: balance;
 }
 
 .false-claims__text {
@@ -690,6 +838,83 @@ img {
   color: var(--color-accent-green);
 }
 
+/* ----- Small phones ----- */
+@media (max-width: 639.98px) {
+  .site-header {
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    padding-bottom: 0.625rem;
+  }
+
+  .site-header__brand img {
+    width: 84px;
+    height: auto;
+  }
+
+  .site-header__link {
+    font-size: 0.8125rem;
+    line-height: 1.2;
+    max-width: 10.5rem;
+  }
+
+  .hero {
+    min-height: clamp(22rem, 78svh, 30rem);
+    padding-bottom: 1.25rem;
+  }
+
+  .hero__inner {
+    gap: 1.25rem;
+    padding-top: 1rem;
+  }
+
+  .hero__badge {
+    margin-bottom: 1rem;
+  }
+
+  .score-dial {
+    width: clamp(12rem, 55vw, 15.5rem);
+    height: clamp(12rem, 55vw, 15.5rem);
+  }
+
+  .insight-section,
+  .deep-dive,
+  .false-claims {
+    margin-bottom: 1rem;
+    padding: clamp(1rem, 4.8vw, 1.5rem);
+  }
+
+  .how,
+  .metric-section {
+    padding-bottom: 1.25rem;
+  }
+
+  .insight-card,
+  .stat-card,
+  .metric-card {
+    padding: clamp(1rem, 4.8vw, 1.5rem);
+  }
+
+  .metric-card {
+    gap: 0.75rem;
+  }
+
+  .metric-card__icon,
+  .metric-section__icon {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .deep-metric {
+    padding: clamp(0.875rem, 4vw, 1.25rem);
+  }
+
+  .how__text {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+}
+
 /* ----- Tablet: stat row ----- */
 @media (min-width: 640px) {
   .stat-cards {
@@ -699,6 +924,31 @@ img {
 
   .stat-card {
     min-height: 9.5rem;
+  }
+}
+
+/* ----- Tablet-only: increase information density ----- */
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .hero {
+    min-height: clamp(24rem, 68vh, 34rem);
+  }
+
+  .hero__copy {
+    max-width: 34rem;
+  }
+
+  .insight-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .deep-dive__metrics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .deep-metric:last-child {
+    grid-column: 1 / -1;
   }
 }
 
@@ -752,6 +1002,10 @@ img {
     gap: 1rem 1.25rem;
   }
 
+  .insight-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .deep-dive__title {
     font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
   }
@@ -769,6 +1023,30 @@ img {
 }
 
 @media (min-width: 1280px) {
+  .page {
+    max-width: 82rem;
+  }
+
+  .hero__inner {
+    max-width: 82rem;
+  }
+
+  .hero__copy {
+    max-width: 36rem;
+  }
+
+  .hero__lead {
+    max-width: 42rem;
+  }
+
+  .how__inner,
+  .metric-section,
+  .insight-section,
+  .deep-dive,
+  .false-claims {
+    max-width: 64rem;
+  }
+
   .site-header {
     padding-top: 1rem;
     padding-bottom: 0.75rem;
