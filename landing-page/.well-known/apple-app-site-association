@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "4YSZ772A2Y.ai.flean.shop",
+        "paths": ["/product", "/product/*"]
+      }
+    ]
+  }
+}

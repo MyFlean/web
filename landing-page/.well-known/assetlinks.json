@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "ai.flean.shop",
+      "sha256_cert_fingerprints": [
+        "71:76:B1:A9:65:07:2B:01:F3:49:0D:6A:54:98:DB:E0:A2:7B:53:E9:CA:F6:F2:07:14:4D:3F:49:9B:A5:6F:67"
+      ]
+    }
+  }
+]
