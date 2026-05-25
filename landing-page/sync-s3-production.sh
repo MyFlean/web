@@ -9,7 +9,7 @@ REGION="${AWS_REGION:-ap-south-1}"
 DIST="${CLOUDFRONT_DISTRIBUTION_ID:-EIQISUR48FJWY}"
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 
-OPTS=(--region "$REGION" --exclude ".DS_Store" --exclude "**/.DS_Store")
+OPTS=(--region "$REGION" --exclude ".DS_Store" --exclude "**/.DS_Store" --exclude "*.dmg")
 
 echo "== Static assets (long cache; excludes HTML/CSS/JS/.well-known) =="
 aws s3 sync "$ROOT/" "s3://${BUCKET}/" \
@@ -31,6 +31,7 @@ aws s3 sync "$ROOT/" "s3://${BUCKET}/" \
 echo "== HTML (always revalidate) =="
 aws s3 sync "$ROOT/" "s3://${BUCKET}/" \
   "${OPTS[@]}" \
+  --exclude "*" \
   --include "*.html" \
   --cache-control "no-cache, no-store, must-revalidate"
 
