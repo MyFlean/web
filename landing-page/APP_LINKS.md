@@ -12,12 +12,13 @@ These files live under [.well-known/](./.well-known/) and deploy to:
 | Android package | `ai.flean.shop` |
 | iOS `appID` | `4YSZ772A2Y.ai.flean.shop` (Team ID + bundle ID) |
 | URL scope | Matches the Android app manifest intent filter: HTTPS `flean.ai` with path prefix **`/product`** (`/product`, `/product/...`). |
+| Product share fallback | [`product/deeplink.html`](./product/deeplink.html) — CloudFront rewrites `/product/{id}` to this page; opens the app when installed, else Play Store / App Store. |
 
 ### Android fingerprints
 
-[`assetlinks.json`](./.well-known/assetlinks.json) currently includes the **local debug keystore** SHA-256 (see `keytool -list -v -keystore ~/.android/debug.keystore`). This is useful for QA builds signed with the debug key.
+[`assetlinks.json`](./.well-known/assetlinks.json) includes the **local debug keystore** SHA-256 and the **release keystore** (`android/flean.jks`) fingerprint for local release builds.
 
-**Google Play builds** use [Play App Signing](https://support.google.com/googleplay/android-developer/answer/9842756). You **must add** the **App signing key certificate** SHA-256 from Play Console:
+**Google Play builds** use [Play App Signing](https://support.google.com/googleplay/android-developer/answer/9842756). If Play re-signs your APK/AAB, also add the **App signing key certificate** SHA-256 from Play Console:
 
 **Release** → **App integrity** → **App signing** → **App signing key certificate**
 
@@ -26,6 +27,8 @@ Append that fingerprint (colon-separated uppercase hex, same format as debug) as
 ## Deploy
 
 [`sync-s3-production.sh`](./sync-s3-production.sh) uploads `.well-known` with `Cache-Control: no-cache` and `Content-Type: application/json`.
+
+[`sync-cloudfront-function.sh`](./sync-cloudfront-function.sh) publishes URI rewrites (onelink, flean-score, **product deeplink**) to CloudFront function `flean-score-rewrite-index`.
 
 ## Troubleshooting
 
