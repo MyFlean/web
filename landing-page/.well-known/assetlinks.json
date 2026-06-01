@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "ai.flean.shop",
       "sha256_cert_fingerprints": [
-        "71:76:B1:A9:65:07:2B:01:F3:49:0D:6A:54:98:DB:E0:A2:7B:53:E9:CA:F6:F2:07:14:4D:3F:49:9B:A5:6F:67"
+        "71:76:B1:A9:65:07:2B:01:F3:49:0D:6A:54:98:DB:E0:A2:7B:53:E9:CA:F6:F2:07:14:4D:3F:49:9B:A5:6F:67",
+        "BB:7A:E1:F6:4B:2C:7A:BA:00:8A:45:BB:7E:90:2A:24:17:38:51:CC:68:22:32:EC:EA:9C:5B:9E:A8:64:7F:19"
       ]
     }
   }
